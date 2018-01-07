@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Card App</title>
+        <style>
+            /* quick reset for time reasons */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body, html {
+                height: 100%;
+            }
+            body {
+                background: url('images/background.jpg') 50% 50%;
+                background-size: cover;
+            }
+            .card {
+                width: 142px;
+                height: 200px;
+                float: left;
+                perspective: 1000px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform-origin: 25% 141%;
+            }
+            .animation {
+                transition: left 0.5s, top 0.5s, transform 0.5s;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .flip {
+                position: relative;
+                transition: 0.5s;
+                transform-style: preserve-3d;
+                width: 100%;
+                height: 100%;
+            }
+            .flip--flipped {
+                transform: rotateY(180deg);
+            }
+            .back, .front {
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+                border-radius: 10px;
+            }
+            .back {
+                background: url('images/back.png');
+                background-size: 100% 100%;
+            }
+            .front {
+                transform: rotateY(180deg);
+            }
+            .deck {
+                width: 142px;
+                height: 200px;
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                margin-left: -71px;
+            }
+            button {
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                color: #fff;
+                background: red;
+                float: left;
+                clear: both;
+                margin: 10px 0 0 10px;
+                border-radius: 10px;
+                border: 0;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="deck1" class="deck"></div>
+        <button id="shuffle">Shuffle</button>
+        <button id="draw">Draw</button>
+        <button id="sort">Sort</button>
+        <button id="reset">Reset</button>
+        <script src="js/bundle.js"></script>
+    </body>
+</html>

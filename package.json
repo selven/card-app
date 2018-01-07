@@ -1,0 +1,31 @@
+{
+  "name": "deck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "test": "mocha -r jsdom-global/register --timeout 0 --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.36",
+    "@babel/preset-env": "^7.0.0-beta.36",
+    "babel-loader": "^8.0.0-beta.0",
+    "jsdom": "11.5.1",
+    "jsdom-global": "3.0.2",
+    "mocha-loader": "^1.1.2",
+    "should": "^13.2.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {
+    "velocity-animate": "^1.5.0"
+  }
+}
